@@ -1,6 +1,10 @@
 
 package megal;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.*;
+
 
 
 
@@ -25,8 +29,11 @@ public class Megal {
        JLabel oldlabel=new JLabel("Password:");
        JPasswordField pass =new JPasswordField(30);
        oldlabel.setLabelFor(pass);
+     
+       //adding buttons
        JButton login=new JButton("Login");
        JButton clear= new JButton("Clear");
+    
        //adding components in the panel
        mypanel.add(newlabel);
        mypanel.add(name);
@@ -39,7 +46,25 @@ public class Megal {
        chris.setSize(400,300);
        chris.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
        chris.setVisible(true);
-      }
+       login.addActionListener(new GUIlistener());
+       clear.addActionListener(new GUIlistener());
+       }
+    static class GUIlistener implements ActionListener{
+        
+        @Override
+        public void actionPerformed(ActionEvent ae) {
+             
+            JFrame frame2 = new JFrame("Home");
+               frame2.setVisible(true);
+               frame2.setSize(400,300);
+               JPanel panel = new JPanel();
+               frame2.add (panel);
+     }
+      
+            
+             //To change body of generated methods, choose Tools | Templates.
+        }
+        //this class monitors the buttons
     
 }
 
